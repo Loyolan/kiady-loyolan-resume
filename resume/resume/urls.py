@@ -16,9 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from app import views
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", views.index),
     path("resume/", include('app.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
