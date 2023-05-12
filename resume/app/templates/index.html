@@ -13,7 +13,9 @@
     <link rel="stylesheet" href="{% static './assets/css/gradient.css' %}">
     <link rel="stylesheet" href="{% static './assets/css/new-skin.css' %}">
     <link rel="stylesheet" href="{% static './assets/css/demo-2-colors.css' %}">
+    {% if params.svg == 'light' %}
     <link rel="stylesheet" href="{% static './assets/css/dark.css' %}">
+    {% endif %}
     <link rel="stylesheet" href="{% static './assets/css/style.css' %}">
 </head>
 
@@ -64,32 +66,38 @@
                     <ul>
                         <li class="active">
                             <a href="#about-card">
-                                <img src="{% static './assets/images/svg/person.svg' %}" width="25" height="25" />
+                                <img src="{% static './assets/images/svg/person-' %}{{params.svg}}.svg" width="25" height="25" />
                                 <span class="link">About</span>
                             </a>
                         </li>
                         <li>
                             <a href="#resume-card">
-                                <img src="{% static './assets/images/svg/book.svg' %}" width="25" height="25" />
+                                <img src="{% static './assets/images/svg/book-' %}{{params.svg}}.svg" width="25" height="25" />
                                 <span class="link">Resume</span>
                             </a>
                         </li>
                         <li>
                             <a href="#works-card">
-                                <img src="{% static './assets/images/svg/brush.svg' %}" width="25" height="25" />
+                                <img src="{% static './assets/images/svg/brush-' %}{{params.svg}}.svg" width="25" height="25" />
                                 <span class="link">Works</span>
                             </a>
                         </li>
                         <li>
                             <a href="#blog-card">
-                                <img src="{% static './assets/images/svg/chatbox.svg' %}" width="25" height="25" />
+                                <img src="{% static './assets/images/svg/chatbox-' %}{{params.svg}}.svg" width="25" height="25" />
                                 <span class="link">Blog</span>
                             </a>
                         </li>
                         <li>
                             <a href="#contacts-card">
-                                <img src="{% static './assets/images/svg/at.svg' %}" width="25" height="25" />
+                                <img src="{% static './assets/images/svg/at-' %}{{params.svg}}.svg" width="25" height="25" />
                                 <span class="link">Contact</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{{params.link}}">
+                                <img src="{% static './assets/images/svg/shirt-' %}{{params.svg}}.svg" width="25" height="25" />
+                                <span class="link">{{params.change}}</span>
                             </a>
                         </li>
                     </ul>
@@ -121,20 +129,20 @@
 
                     <!-- profile socials -->
                     <div class="social">
-                        <a target="_blank" href="https://dribbble.com/">
-                            <img src="{% static './assets/images/svg/logo-dribbble.svg' %}" width="25" height="25" />
+                        <a target="_blank" href="https://www.kaggle.com/kiadyloyolan">
+                            <img src="{% static './assets/images/svg/kaggle-icon.svg' %}" width="25" height="25" />
                         </a>
-                        <a id="email" target="_blank" href="https://gmail.com/">
-                            <img src="{% static './assets/images/svg/mail.svg' %}" width="25" height="25" />
+                        <a id="email" target="_blank" href="mailto:kiadyyrann@gmail.com">
+                            <img src="{% static './assets/images/svg/mail-' %}{{params.svg}}.svg" width="25" height="25" />
                         </a>
                         <a target="_blank" href="https://github.com/Loyolan">
-                            <img src="{% static './assets/images/svg/logo-github.svg' %}" width="25" height="25" />
+                            <img src="{% static './assets/images/svg/logo-github-' %}{{params.svg}}.svg" width="25" height="25" />
                         </a>
                         <a target="_blank" href="https://www.linkedin.com/in/kiady-loyolan">
-                            <img src="{% static './assets/images/svg/logo-linkedin.svg' %}" width="25" height="25" />
+                            <img src="{% static './assets/images/svg/logo-linkedin-' %}{{params.svg}}.svg" width="25" height="25" />
                         </a>
-                        <a target="_blank" href="https://stackoverflow.com/">
-                            <img src="{% static './assets/images/svg/logo-stackoverflow.svg' %}" width="25" height="25" />
+                        <a target="_blank" href="https://stackoverflow.com/users/21890653/kiady-loyolan">
+                            <img src="{% static './assets/images/svg/logo-stackoverflow-' %}{{params.svg}}.svg" width="25" height="25" />
                         </a>
                     </div>
                     
@@ -205,7 +213,7 @@
                             <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
                                 <div class="service-item">
                                     <div class="icon">
-                                        <img src="{% static './assets/images/svg/pulse.svg' %}" width="50" height="50" />
+                                        <img src="{% static './assets/images/svg/pulse-' %}{{params.svg}}.svg" width="50" height="50" />
                                     </div>
                                     <div class="name">
                                         <span>
@@ -227,7 +235,7 @@
                             <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
                                 <div class="service-item">
                                     <div class="icon">
-                                        <img src="{% static './assets/images/svg/analytics.svg' %}" width="50" height="50" />
+                                        <img src="{% static './assets/images/svg/analytics-' %}{{params.svg}}.svg" width="50" height="50" />
                                     </div>
                                     <div class="name">
                                         <span>
@@ -247,7 +255,7 @@
                             <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
                                 <div class="service-item">
                                     <div class="icon">
-                                        <img src="{% static './assets/images/svg/server-outline.svg' %}" width="50" height="50" />
+                                        <img src="{% static './assets/images/svg/server-outline-' %}{{params.svg}}.svg" width="50" height="50" />
                                     </div>
                                     <div class="name">
                                         <span>
@@ -266,7 +274,7 @@
                             <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
                                 <div class="service-item">
                                     <div class="icon">
-                                        <img src="{% static './assets/images/svg/logo-python.svg' %}" width="50" height="50" />
+                                        <img src="{% static './assets/images/svg/logo-python-' %}{{params.svg}}.svg" width="50" height="50" />
                                     </div>
                                     <div class="name">
                                         <span>
@@ -285,7 +293,7 @@
                             <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
                                 <div class="service-item">
                                     <div class="icon">
-                                        <img src="{% static './assets/images/svg/logo-angular.svg' %}" width="50" height="50" />
+                                        <img src="{% static './assets/images/svg/logo-angular-' %}{{params.svg}}.svg" width="50" height="50" />
                                     </div>
                                     <div class="name">
                                         <span>
@@ -304,7 +312,7 @@
                             <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
                                 <div class="service-item">
                                     <div class="icon">
-                                        <img src="{% static './assets/images/svg/pulse.svg' %}" width="50" height="50" />
+                                        <img src="{% static './assets/images/svg/pulse-' %}{{params.svg}}.svg" width="50" height="50" />
                                     </div>
                                     <div class="name">
                                         <span>
@@ -323,7 +331,7 @@
                             <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
                                 <div class="service-item">
                                     <div class="icon">
-                                        <img src="{% static './assets/images/svg/pulse.svg' %}" width="50" height="50" />
+                                        <img src="{% static './assets/images/svg/pulse-' %}{{params.svg}}.svg" width="50" height="50" />
                                     </div>
                                     <div class="name">
                                         <span>
@@ -342,7 +350,7 @@
                             <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
                                 <div class="service-item">
                                     <div class="icon">
-                                        <img src="{% static './assets/images/svg/chatbubble-ellipses-outline.svg' %}" width="50" height="50" />
+                                        <img src="{% static './assets/images/svg/chatbubble-ellipses-outline-' %}{{params.svg}}.svg" width="50" height="50" />
                                     </div>
                                     <div class="name">
                                         <span>
@@ -361,7 +369,7 @@
                             <div class="col col-d-6 col-t-6 col-m-12 border-line-h">
                                 <div class="service-item">
                                     <div class="icon">
-                                        <img src="{% static './assets/images/svg/logo-discord.svg' %}" width="50" height="50" />
+                                        <img src="{% static './assets/images/svg/logo-discord-' %}{{params.svg}}.svg" width="50" height="50" />
                                     </div>
                                     <div class="name">
                                         <span>
@@ -532,7 +540,7 @@
                             <div class="col col-d-4 col-t-4 col-m-6 border-line-v">
                                 <div class="fuct-item">
                                     <div class="icon">
-                                        <img src="{% static './assets/images/svg/code-slash.svg' %}" width="75" height="75">
+                                        <img src="{% static './assets/images/svg/code-slash-' %}{{params.svg}}.svg" width="75" height="75">
                                     </div>
                                     <div class="name">
                                         <p class="center-align mt-2"><b>Fingerprint pointing</b><br> Hikvision, IVMS, Django(back), Angular (front)</p>
@@ -545,7 +553,7 @@
                             <div class="col col-d-4 col-t-4 col-m-6 border-line-v">
                                 <div class="fuct-item">
                                     <div class="icon">
-                                        <img src="{% static './assets/images/svg/analytics.svg' %}" width="75" height="75">
+                                        <img src="{% static './assets/images/svg/analytics-' %}{{params.svg}}.svg" width="75" height="75">
                                     </div>
                                     <div class="name">
                                         <p class="center-align mt-2"><b>Data analysis </b><br> (Pandas, Numpy, Seaborn, Patplotlib)</p>
@@ -558,7 +566,7 @@
                             <div class="col col-d-4 col-t-4 col-m-6 border-line-v">
                                 <div class="fuct-item">
                                     <div class="icon">
-                                        <img src="{% static './assets/images/svg/pulse.svg' %}" width="75" height="75">
+                                        <img src="{% static './assets/images/svg/pulse-' %}{{params.svg}}.svg" width="75" height="75">
                                     </div>
                                     <div class="name">
                                         <p class="center-align mt-2"><b>Text Generator</b><br> (Tensorflow, Keras)</p>
@@ -571,7 +579,7 @@
                             <div class="col col-d-4 col-t-4 col-m-6 border-line-v">
                                 <div class="fuct-item">
                                     <div class="icon">
-                                        <img src="{% static './assets/images/svg/pulse.svg' %}" width="75" height="75">
+                                        <img src="{% static './assets/images/svg/pulse-' %}{{params.svg}}.svg" width="75" height="75">
                                     </div>
                                     <div class="name">
                                         <p class="center-align mt-2"><b>Text Translator</b><br> (Tensorflow, Keras)</p>
@@ -584,7 +592,7 @@
                             <div class="col col-d-4 col-t-4 col-m-6 border-line-v">
                                 <div class="fuct-item">
                                     <div class="icon">
-                                        <img src="{% static './assets/images/svg/pulse.svg' %}" width="75" height="75">
+                                        <img src="{% static './assets/images/svg/pulse-' %}{{params.svg}}.svg" width="75" height="75">
                                     </div>
                                     <div class="name">
                                         <p class="center-align mt-2"><b> Motion detection</b><br> (Mediapipe, Opencv, Numpy)</p>
@@ -597,7 +605,7 @@
                             <div class="col col-d-4 col-t-4 col-m-6 border-line-v">
                                 <div class="fuct-item">
                                     <div class="icon">
-                                        <img src="{% static './assets/images/svg/logo-discord.svg' %}" width="75" height="75">
+                                        <img src="{% static './assets/images/svg/logo-discord-' %}{{params.svg}}.svg" width="75" height="75">
                                     </div>
                                     <div class="name">
                                         <p class="center-align mt-2"> <b>Discord BOT for community YP IN DATA SCIENCE</b><br> (discord.py, NLTK, Spacy, Classy, Google-api, wikipedia-api)</p>
