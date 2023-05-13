@@ -1,0 +1,81 @@
+{% extends 'main/base.html' %}
+{% load static %}
+            
+{% block profile %}
+            <!--
+                Card - Started
+            -->
+            <div class="card-started" id="home-card">
+
+                <!--
+                    Profile
+                -->
+                <div class="profile">
+
+                    <!-- profile image -->
+                    <div class="slide"></div>
+
+                    <!-- profile photo -->
+                    <div class="image">
+                        <img id="personal_image" src="{% static './assets/images/profile.jpg' %}" alt="">
+                    </div>
+
+                    <!-- profile titles -->
+                    <div class="title" id="name">{{title}}</div>
+                    <!--<div class="subtitle">Web Designer</div>-->
+                    <div class="subtitle subtitle-typed">{{params.link}}</div>
+                    <span class="typed-cursor">|</span>
+                    
+                    <!-- profile buttons -->
+                    <div class="lnks">
+                        <a href="{% url 'index' %}" class="lnk">
+                            <span class="text">Return to home page</span>
+                        </a>
+                        <a href="#" class="lnk discover">
+                            <span class="text">Repport Bug</span>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+{% endblock %}
+
+{% block content %}
+            <!-- 
+                Card - About
+            -->
+            <div class="card-inner animated active" id="about-card">
+                <div class="card-wrap">
+
+                    <!-- 
+                        About 
+                    -->
+                    <div class="content about">
+
+                        <!-- title -->
+                        <div class="title"><span class="first-word">Error</span> Message</div>
+
+                        <!-- content -->
+                        <div class="row">
+                            <div class="col col-d-7 col-t-7 col-m-12 border-line-v">
+                                <div class="text-box">
+                                    <p id="intro_section">
+                                        
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="col col-d-5 col-t-5 col-m-12 border-line-v">
+                                <div class="info-list">
+                                    <ul>
+                                        <li><strong>Code </strong> 404</li>
+                                        <li><strong>Error </strong> NOT FOUND</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{% endblock %}

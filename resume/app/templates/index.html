@@ -1,109 +1,7 @@
+{% extends 'main/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en" class="fa-events-icons-ready">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-    <title>Kiady LoyOlan / Resume / Skill Reactor</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="description" content="Kiady LoyOlan/Resume/Skill Reactor">
-    <meta name="keywords" content="skill, resume, personal, card, cv, portfolio">
-    <link rel="icon" href="https://icon-library.com/images/resume-icon/resume-icon-3.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="{% static './assets/css/basic.css' %}">
-    <link rel="stylesheet" href="{% static './assets/css/layout.css' %}">
-    <link rel="stylesheet" href="{% static './assets/css/gradient.css' %}">
-    <link rel="stylesheet" href="{% static './assets/css/new-skin.css' %}">
-    <link rel="stylesheet" href="{% static './assets/css/demo-2-colors.css' %}">
-    {% if params.svg == 'light' %}
-    <link rel="stylesheet" href="{% static './assets/css/dark.css' %}">
-    {% endif %}
-    <link rel="stylesheet" href="{% static './assets/css/style.css' %}">
-</head>
-
-<body>
-    <div class="page new-skin">
-        <!-- background -->
-        <div class="background gradient">
-            <ul class="bg-bubbles">
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
-
-        <!--
-            Container
-        -->
-        <div class="container opened" data-animation-in="fadeInLeft" data-animation-out="fadeOutLeft">
-
-            <!--
-                Header
-            -->
-            <header class="header">
-
-                <!-- header profile -->
-                <div class="profile">                       
-                    <div class="image">
-                        <a href="#">
-                            <img src="{% static './assets/images/profile.jpg' %}" alt="Kiady LoyOlan">
-                        </a>
-                    </div>
-                    <div class="title">Kiady LoyOlan</div>
-                    <div class="subtitle subtitle-typed">Developer Data & IA</div><span class="typed-cursor">|</span>
-                </div>
-
-                <!-- menu btn -->
-                <a href="#" class="menu-btn"><span></span></a>
-
-                <!-- menu -->
-                <div class="top-menu">
-                    <ul>
-                        <li class="active">
-                            <a href="#about-card">
-                                <img src="{% static './assets/images/svg/person-' %}{{params.svg}}.svg" width="25" height="25" />
-                                <span class="link">About</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#resume-card">
-                                <img src="{% static './assets/images/svg/book-' %}{{params.svg}}.svg" width="25" height="25" />
-                                <span class="link">Resume</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#works-card">
-                                <img src="{% static './assets/images/svg/brush-' %}{{params.svg}}.svg" width="25" height="25" />
-                                <span class="link">Works</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#blog-card">
-                                <img src="{% static './assets/images/svg/chatbox-' %}{{params.svg}}.svg" width="25" height="25" />
-                                <span class="link">Blog</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#contacts-card">
-                                <img src="{% static './assets/images/svg/at-' %}{{params.svg}}.svg" width="25" height="25" />
-                                <span class="link">Contact</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="{{params.link}}">
-                                <img src="{% static './assets/images/svg/shirt-' %}{{params.svg}}.svg" width="25" height="25" />
-                                <span class="link">{{params.change}}</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-            </header>
-
+            
+{% block profile %}
             <!--
                 Card - Started
             -->
@@ -159,7 +57,9 @@
                 </div>
 
             </div>
+{% endblock %}
 
+{% block content %}
             <!-- 
                 Card - About
             -->
@@ -722,8 +622,4 @@
 
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- bslthemes.com buttons html begin -->
-</body>
-</html>
+{% endblock %}
